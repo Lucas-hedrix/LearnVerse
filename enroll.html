@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enroll Your Child — LearnVerse Hub</title>
+    <meta name="description" content="Enroll your child in Learn Verse Edu Hub's premium educational and coding programs. Fill in the form and our team will be in touch within 24 hours.">
+    <link rel="icon" type="image/jpeg" href="logoImg.jpeg">
+    <link rel="apple-touch-icon" href="logoImg.jpeg">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="enroll.css">
+</head>
+<body class="enroll-page">
+
+    <!-- Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="logoImg.jpeg" alt="LearnVerse Hub Logo">
+                <span>LearnVerse</span>
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#about-hub">About</a></li>
+                    <li><a href="index.html#programs">Programs</a></li>
+                    <li><a href="index.html#sen">SEN</a></li>
+                    <li><a href="index.html#instructors">Our Team</a></li>
+                </ul>
+            </nav>
+            <div class="nav-cta" style="display:flex;gap:10px;align-items:center;">
+                <a href="index.html" class="btn btn-ghost-nav">← Back to Site</a>
+                <a href="enroll.html" class="btn btn-outline">Enrol Now</a>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="index.html#home" class="mob-link">Home</a></li>
+                <li><a href="index.html#about-hub" class="mob-link">About</a></li>
+                <li><a href="index.html#programs" class="mob-link">Programs</a></li>
+                <li><a href="index.html#sen" class="mob-link">SEN</a></li>
+                <li><a href="index.html#instructors" class="mob-link">Our Team</a></li>
+                <li><a href="index.html" class="mob-link mob-cta">← Back to Site</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="enroll-hero">
+        <div class="enroll-hero-bg"></div>
+        <div class="enroll-hero-content">
+            <img src="logoImg.jpeg" alt="LearnVerse Logo" class="enroll-hero-logo" loading="lazy">
+            <span class="section-eyebrow" style="color:rgba(255,255,255,0.7)">Start Your Journey</span>
+            <h1>Enroll Your Child Today</h1>
+            <p>Fill in the form below and our team will reach out within <strong>24 hours</strong> to confirm your child's place and discuss the best programme for them.</p>
+            <div class="enroll-hero-chips">
+                <span>✅ No upfront payment required</span>
+                <span>📞 We'll call you to confirm</span>
+                <span>🔒 Your data is safe with us</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enrolment Form -->
+    <section class="enroll-form-section">
+        <div class="enroll-layout">
+
+            <!-- Left: Form -->
+            <div class="enroll-form-wrap">
+                <div class="enroll-form-card">
+                    <h2>Enrollment Form</h2>
+                    <p class="form-subhead">Fields marked <span class="req">*</span> are required.</p>
+
+                    <form id="enrollForm" class="lv-form" novalidate>
+                        <!-- Web3Forms key — replace with yours from web3forms.com -->
+                        <input type="hidden" name="access_key" value="3c5d578e-ef88-436f-a607-98d0de54f32d">
+                        <input type="hidden" name="subject" value="New Child Enrolment — LearnVerse Hub">
+                        <input type="hidden" name="from_name" value="LearnVerse Hub Enrolment">
+                        <input type="checkbox" name="botcheck" style="display:none;">
+
+                        <!-- SECTION 1: Parent Info -->
+                        <div class="form-section-label">
+                            <span>01</span> Parent / Guardian Information
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="parent-name">Full Name <span class="req">*</span></label>
+                                <input type="text" id="parent-name" name="parent_name" placeholder="e.g. Mrs. Adaeze Okonkwo" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="relationship">Relationship to Child <span class="req">*</span></label>
+                                <select id="relationship" name="relationship" required>
+                                    <option value="" disabled selected>Select</option>
+                                    <option>Mother</option>
+                                    <option>Father</option>
+                                    <option>Guardian</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="parent-email">Email Address <span class="req">*</span></label>
+                                <input type="email" id="parent-email" name="parent_email" placeholder="you@example.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="parent-phone">Phone / WhatsApp Number <span class="req">*</span></label>
+                                <input type="tel" id="parent-phone" name="parent_phone" placeholder="+234 800 000 0000" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="country">Country of Residence <span class="req">*</span></label>
+                            <select id="country" name="country" required>
+                                <option value="" disabled selected>Select your country</option>
+                                <option>Nigeria</option>
+                                <option>United Kingdom</option>
+                                <option>United States</option>
+                                <option>Canada</option>
+                                <option>Australia</option>
+                                <option>Germany</option>
+                                <option>South Africa</option>
+                                <option>Ghana</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+
+                        <!-- SECTION 2: Child Info -->
+                        <div class="form-section-label">
+                            <span>02</span> Child's Information
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="child-name">Child's Full Name <span class="req">*</span></label>
+                                <input type="text" id="child-name" name="child_name" placeholder="e.g. Chukwuemeka Okonkwo" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="child-age">Child's Age <span class="req">*</span></label>
+                                <select id="child-age" name="child_age" required>
+                                    <option value="" disabled selected>Select age</option>
+                                    <option>5</option><option>6</option><option>7</option>
+                                    <option>8</option><option>9</option><option>10</option>
+                                    <option>11</option><option>12</option><option>13</option>
+                                    <option>14</option><option>15</option><option>16</option>
+                                    <option>17</option><option>18+</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="child-gender">Gender</label>
+                                <select id="child-gender" name="child_gender">
+                                    <option value="" disabled selected>Select</option>
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                    <option>Prefer not to say</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="child-school">Current School / Grade (optional)</label>
+                                <input type="text" id="child-school" name="child_school" placeholder="e.g. Grade 4, St. Finbarr's">
+                            </div>
+                        </div>
+
+                        <!-- SECTION 3: Programme -->
+                        <div class="form-section-label">
+                            <span>03</span> Programme Selection
+                        </div>
+
+                        <div class="form-group">
+                            <label>Programme(s) of Interest <span class="req">*</span></label>
+                            <div class="checkbox-grid">
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="program" value="Basic Python Programming">
+                                    <div class="checkbox-card-inner">
+                                        <span class="cb-icon">🐍</span>
+                                        <span class="cb-title">Basic Python Programming</span>
+                                        <span class="cb-age">Ages 10+</span>
+                                    </div>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="program" value="AI for Kids">
+                                    <div class="checkbox-card-inner">
+                                        <span class="cb-icon">🤖</span>
+                                        <span class="cb-title">AI for Kids</span>
+                                        <span class="cb-age">Ages 7–14</span>
+                                    </div>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="program" value="Block Coding (Scratch, Kodular, MIT App)">
+                                    <div class="checkbox-card-inner">
+                                        <span class="cb-icon">🧱</span>
+                                        <span class="cb-title">Block Coding</span>
+                                        <span class="cb-age">Ages 6–12</span>
+                                    </div>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="program" value="Web Development">
+                                    <div class="checkbox-card-inner">
+                                        <span class="cb-icon">🌐</span>
+                                        <span class="cb-title">Web Development</span>
+                                        <span class="cb-age">Ages 12+</span>
+                                    </div>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="program" value="Special Education Needs (SEN)">
+                                    <div class="checkbox-card-inner">
+                                        <span class="cb-icon">💛</span>
+                                        <span class="cb-title">SEN Support</span>
+                                        <span class="cb-age">All ages</span>
+                                    </div>
+                                </label>
+                                <label class="checkbox-card">
+                                    <input type="checkbox" name="program" value="General Academic Support">
+                                    <div class="checkbox-card-inner">
+                                        <span class="cb-icon">📚</span>
+                                        <span class="cb-title">Academic Support</span>
+                                        <span class="cb-age">All ages</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="session-pref">Preferred Session Type <span class="req">*</span></label>
+                                <select id="session-pref" name="session_type" required>
+                                    <option value="" disabled selected>Select</option>
+                                    <option>One-on-One (Private)</option>
+                                    <option>Small Group (2–5 students)</option>
+                                    <option>Either is fine</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="availability">Preferred Schedule <span class="req">*</span></label>
+                                <select id="availability" name="availability" required>
+                                    <option value="" disabled selected>Select</option>
+                                    <option>Weekday Mornings</option>
+                                    <option>Weekday Afternoons</option>
+                                    <option>Weekday Evenings</option>
+                                    <option>Weekends Only</option>
+                                    <option>Flexible / Any time</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- SECTION 4: SEN -->
+                        <div class="form-section-label">
+                            <span>04</span> Special Education Needs (Optional)
+                        </div>
+
+                        <div class="form-group">
+                            <label for="sen-needs">Does your child have any diagnosed SEN or learning differences?</label>
+                            <select id="sen-needs" name="sen_status">
+                                <option value="" selected>No / Not diagnosed</option>
+                                <option>Yes — Autism Spectrum (ASD)</option>
+                                <option>Yes — ADHD</option>
+                                <option>Yes — Dyslexia</option>
+                                <option>Yes — Speech / Language Delay</option>
+                                <option>Yes — Developmental Delay</option>
+                                <option>Yes — Other (please specify below)</option>
+                                <option>Suspected but not yet diagnosed</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="extra-notes">Anything else we should know? (optional)</label>
+                            <textarea id="extra-notes" name="extra_notes" rows="3" placeholder="Share any additional context about your child's learning needs, goals, or questions you may have..."></textarea>
+                        </div>
+
+                        <!-- SECTION 5: How did you hear -->
+                        <div class="form-group">
+                            <label for="referral">How did you hear about us? <span class="req">*</span></label>
+                            <select id="referral" name="referral_source" required>
+                                <option value="" disabled selected>Select</option>
+                                <option>Word of Mouth / Friend</option>
+                                <option>Social Media (Instagram)</option>
+                                <option>Social Media (Facebook)</option>
+                                <option>Social Media (WhatsApp)</option>
+                                <option>Google / Online Search</option>
+                                <option>A Tutor Referred Me</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+
+                        <!-- Consent -->
+                        <div class="form-group consent-group">
+                            <label class="consent-label">
+                                <input type="checkbox" name="consent" id="consent" required>
+                                <span>I agree to be contacted by Learn Verse Edu Hub regarding my child's enrolment. I understand my data will be used solely for this purpose and not shared with third parties. <span class="req">*</span></span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-full btn-enroll" id="enrollSubmitBtn">
+                            <span class="btn-label">
+                                Submit Enrolment
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </span>
+                            <span class="btn-spinner" style="display:none">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="spin-icon"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+                                Submitting...
+                            </span>
+                        </button>
+
+                        <div class="form-success" id="enrollSuccess" style="display:none">
+                            <span>🎉</span>
+                            <div>
+                                <strong>Enrolment Received!</strong>
+                                <p>Thank you! Our team will review your application and contact you within 24 hours to confirm your child's place.</p>
+                            </div>
+                        </div>
+                        <div class="form-error" id="enrollError" style="display:none">
+                            <span>⚠️</span>
+                            <p>Something went wrong. Please try again or contact us directly via WhatsApp.</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Right: Sidebar -->
+            <aside class="enroll-sidebar">
+
+                <div class="sidebar-card sidebar-why">
+                    <h3>What Happens Next?</h3>
+                    <ol class="next-steps">
+                        <li>
+                            <div class="step-num">1</div>
+                            <div>
+                                <strong>We review your form</strong>
+                                <p>Our team carefully goes through your application within 24 hours.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="step-num">2</div>
+                            <div>
+                                <strong>We contact you</strong>
+                                <p>A member of our team will call or WhatsApp you to discuss the best fit for your child.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="step-num">3</div>
+                            <div>
+                                <strong>Trial session arranged</strong>
+                                <p>We'll schedule a free introductory session so your child can meet their tutor.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="step-num">4</div>
+                            <div>
+                                <strong>Learning begins!</strong>
+                                <p>Once confirmed, your child starts their journey with LearnVerse Hub. 🎉</p>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+
+                <div class="sidebar-card sidebar-trust">
+                    <h3>Why Parents Trust Us</h3>
+                    <ul class="trust-list">
+                        <li><span>🏛️</span> CAC Registered Brand, Nigeria</li>
+                        <li><span>👩‍🏫</span> 15+ years educator experience</li>
+                        <li><span>🌍</span> Serving families in 8+ countries</li>
+                        <li><span>👶</span> Ages 5–18 catered for</li>
+                        <li><span>🔒</span> Safe, supervised online sessions</li>
+                        <li><span>💛</span> SEN-trained specialist support</li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-card sidebar-quote">
+                    <p>"Since joining LearnVerse Hub, my son has completely transformed. He used to dread schoolwork — now he's building games!"</p>
+                    <strong>— Mrs. Adaeze Okonkwo, Lagos</strong>
+                </div>
+
+            </aside>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-bottom" style="padding:24px;">
+            <p>&copy; 2026 LearnVerse Hub. All rights reserved. | CAC Registered Brand, Nigeria. &nbsp;·&nbsp; <a href="index.html" style="color:rgba(255,255,255,0.5);text-decoration:underline;">Back to main site</a></p>
+        </div>
+    </footer>
+
+    <script src="enroll.js"></script>
+</body>
+</html>

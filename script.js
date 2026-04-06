@@ -14,12 +14,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // ============================================
-    // 2. HERO IMAGE SLIDER + DOTS
+    // 2. HERO IMAGE SLIDER + DOTS + LAZY LOADING
     // ============================================
     const slides = document.querySelectorAll('.slide');
     const dotsContainer = document.getElementById('sliderDots');
     let currentSlide = 0;
     const slideInterval = 5000;
+
+    // Lazy-load slide background images
+    // Only load the first slide immediately, defer the rest
+    slides.forEach((slide, i) => {
+        const bg = slide.getAttribute('data-bg');
+        if (!bg) return;
+        if (i === 0) {
+            // Load first slide right away so it's ready
+            slide.style.backgroundImage = `url('${bg}')`;
+        } else {
+            // Load subsequent slides in the background after page is interactive
+            const img = new Image();
+            img.onload = () => { slide.style.backgroundImage = `url('${bg}')`; };
+            img.src = bg;
+        }
+    });
 
     // Create dots
     if (slides.length > 0 && dotsContainer) {
@@ -133,6 +149,78 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('click', (e) => {
         if (!navbar.contains(e.target)) {
             closeMobileMenu();
+        }
+    });
+
+
+    // ============================================
+    // 6. CONTACT MODAL
+    // ============================================
+    const contactModal  = document.getElementById('contactModal');
+    const modalClose    = document.getElementById('modalClose');
+
+    function openModal() {
+        contactModal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+        contactModal.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    document.getElementById('openContactModal')?.addEventListener('click', openModal);
+    document.getElementById('openContactModalMob')?.addEventListener('click', () => {
+        closeMobileMenu();
+        openModal();
+    });
+    document.getElementById('openContactModalFooter')?.addEventListener('click', openModal);
+    modalClose?.addEventListener('click', closeModal);
+
+    contactModal?.addEventListener('click', (e) => {
+        if (e.target === contactModal) closeModal();
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeModal();
+    });
+
+
+    // ============================================
+    // 7. CONTACT FORM SUBMISSION (Web3Forms)
+    // ============================================
+    const contactForm    = document.getElementById('contactForm');
+    const contactBtn     = document.getElementById('contactSubmitBtn');
+    const contactSuccess = document.getElementById('contactSuccess');
+    const contactError   = document.getElementById('contactError');
+
+    contactForm?.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        contactBtn.querySelector('.btn-label').style.display = 'none';
+        contactBtn.querySelector('.btn-spinner').style.display = 'inline-flex';
+        contactBtn.disabled = true;
+        contactSuccess.style.display = 'none';
+        contactError.style.display = 'none';
+
+        try {
+            const res = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: new FormData(contactForm)
+            });
+            const data = await res.json();
+
+            if (data.success) {
+                contactSuccess.style.display = 'flex';
+                contactForm.reset();
+            } else {
+                contactError.style.display = 'flex';
+            }
+        } catch {
+            contactError.style.display = 'flex';
+        } finally {
+            contactBtn.querySelector('.btn-label').style.display = 'inline';
+            contactBtn.querySelector('.btn-spinner').style.display = 'none';
+            contactBtn.disabled = false;
         }
     });
 

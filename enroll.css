@@ -1,0 +1,582 @@
+/* ============================================
+   ENROLL PAGE — Additional Styles
+   (inherits all variables from styles.css)
+   ============================================ */
+
+.enroll-page { background: var(--off-white); }
+
+/* ============================================
+   ENROLL HERO
+   ============================================ */
+.enroll-hero {
+    position: relative;
+    padding: 140px 24px 80px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.enroll-hero-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #1a1612 0%, #2e1a08 60%, #1a1612 100%);
+    z-index: 0;
+}
+.enroll-hero-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(255,107,0,0.18) 0%, transparent 65%);
+}
+
+.enroll-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 680px;
+    margin: 0 auto;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    animation: fadeInUp 0.8s ease 0.3s both;
+}
+
+.enroll-hero-logo {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255,107,0,0.4);
+    box-shadow: 0 8px 30px rgba(255,107,0,0.3);
+    margin-bottom: 4px;
+}
+
+.enroll-hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 900;
+    line-height: 1.15;
+    margin: 0;
+}
+.enroll-hero-content h1 em {
+    color: var(--primary-light);
+    font-style: italic;
+}
+
+.enroll-hero-content p {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,0.78);
+    line-height: 1.75;
+    max-width: 520px;
+    margin: 0;
+}
+.enroll-hero-content strong { color: var(--primary-light); font-weight: 600; }
+
+.enroll-hero-chips {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 6px;
+}
+.enroll-hero-chips span {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.82);
+    font-size: 0.82rem;
+    font-weight: 500;
+    padding: 7px 16px;
+    border-radius: 50px;
+    backdrop-filter: blur(6px);
+}
+
+/* ============================================
+   ENROLL LAYOUT
+   ============================================ */
+.enroll-form-section {
+    padding: 60px 24px 100px;
+}
+
+.enroll-layout {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 36px;
+    align-items: start;
+}
+
+/* ============================================
+   FORM CARD
+   ============================================ */
+.enroll-form-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 52px 52px;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border);
+}
+
+.enroll-form-card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.9rem;
+    color: var(--text-main);
+    margin-bottom: 6px;
+}
+
+.form-subhead {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 36px;
+}
+
+.form-section-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-muted);
+    margin: 32px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+}
+.form-section-label:first-of-type { margin-top: 0; }
+.form-section-label span {
+    width: 28px;
+    height: 28px;
+    background: var(--primary);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.78rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+/* ============================================
+   SHARED FORM ELEMENTS (used in both modal & enroll)
+   ============================================ */
+.lv-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.lv-form .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 18px;
+}
+
+.lv-form label {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.lv-form .req { color: var(--primary); }
+
+.lv-form input[type="text"],
+.lv-form input[type="email"],
+.lv-form input[type="tel"],
+.lv-form select,
+.lv-form textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid #e0d8d2;
+    border-radius: var(--radius-sm);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.97rem;
+    color: var(--text-main);
+    background: var(--white);
+    transition: border-color var(--transition), box-shadow var(--transition);
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.lv-form select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%237a6a60' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 40px;
+}
+
+.lv-form textarea { resize: vertical; min-height: 90px; }
+
+.lv-form input:focus,
+.lv-form select:focus,
+.lv-form textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(255,107,0,0.1);
+}
+
+.lv-form input:invalid:not(:placeholder-shown),
+.lv-form select:invalid:not(:placeholder-shown) {
+    border-color: #e05050;
+}
+
+/* Checkbox grid (programme selection) */
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 4px;
+}
+
+.checkbox-card input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 0; height: 0;
+}
+
+.checkbox-card {
+    cursor: pointer;
+    display: block;
+}
+
+.checkbox-card-inner {
+    border: 1.5px solid #e0d8d2;
+    border-radius: var(--radius-sm);
+    padding: 16px 12px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    transition: border-color var(--transition), background var(--transition), box-shadow var(--transition);
+    background: var(--white);
+}
+.checkbox-card-inner:hover {
+    border-color: var(--primary);
+    background: var(--primary-glow);
+}
+
+.checkbox-card input:checked + .checkbox-card-inner {
+    border-color: var(--primary);
+    background: var(--primary-glow);
+    box-shadow: 0 0 0 3px rgba(255,107,0,0.12);
+}
+
+.cb-icon { font-size: 1.6rem; }
+.cb-title { font-size: 0.82rem; font-weight: 600; color: var(--text-main); }
+.cb-age { font-size: 0.74rem; color: var(--text-muted); }
+
+/* Consent */
+.consent-group { margin-top: 8px; }
+.consent-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    cursor: pointer;
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-weight: 400;
+}
+.consent-label input[type="checkbox"] {
+    width: 18px; height: 18px;
+    border: 1.5px solid #e0d8d2;
+    border-radius: 4px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    accent-color: var(--primary);
+    cursor: pointer;
+}
+
+/* Submit button */
+.btn-full { width: 100%; justify-content: center; margin-top: 8px; }
+.btn-enroll { padding: 16px 28px; font-size: 1rem; }
+
+.spin-icon { animation: spin 0.8s linear infinite; display: inline-block; }
+
+/* Success / Error banners */
+.form-success,
+.form-error {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 18px 20px;
+    border-radius: var(--radius-sm);
+    margin-top: 16px;
+    font-size: 0.93rem;
+    line-height: 1.55;
+}
+.form-success {
+    background: rgba(34, 197, 94, 0.08);
+    border: 1px solid rgba(34, 197, 94, 0.25);
+    color: #166534;
+}
+.form-success span, .form-error span { font-size: 1.4rem; flex-shrink: 0; }
+.form-success strong { display: block; margin-bottom: 3px; }
+.form-error {
+    background: rgba(239, 68, 68, 0.07);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    color: #991b1b;
+}
+
+/* ============================================
+   SIDEBAR
+   ============================================ */
+.enroll-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    position: sticky;
+    top: 90px;
+}
+
+.sidebar-card {
+    background: var(--white);
+    border-radius: var(--radius-md);
+    padding: 32px 28px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-sm);
+}
+
+.sidebar-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: var(--text-main);
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* Next steps */
+.next-steps {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.next-steps li {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+}
+.step-num {
+    width: 30px; height: 30px;
+    background: var(--primary);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.78rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+.next-steps li strong {
+    display: block;
+    font-size: 0.92rem;
+    color: var(--text-main);
+    margin-bottom: 3px;
+}
+.next-steps li p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Trust list */
+.trust-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.trust-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: var(--text-main);
+    font-weight: 500;
+}
+.trust-list li span { font-size: 1.1rem; }
+
+/* Quote card */
+.sidebar-quote {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    border: none;
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+.sidebar-quote::before {
+    content: '"';
+    position: absolute;
+    top: -12px; right: 12px;
+    font-family: 'Playfair Display', serif;
+    font-size: 7rem;
+    color: rgba(255,255,255,0.1);
+    line-height: 1;
+}
+.sidebar-quote p {
+    font-size: 0.95rem;
+    font-style: italic;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.92);
+    margin-bottom: 12px;
+    position: relative;
+}
+.sidebar-quote strong {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.7);
+    font-weight: 600;
+    position: relative;
+}
+
+/* ============================================
+   MODAL STYLES (contact modal in index.html)
+   ============================================ */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(20, 14, 8, 0.65);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: 5000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.modal-overlay.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-box {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 48px 48px 44px;
+    max-width: 600px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.25);
+    transform: translateY(20px) scale(0.97);
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.modal-overlay.open .modal-box {
+    transform: translateY(0) scale(1);
+}
+
+.modal-close {
+    position: absolute;
+    top: 18px; right: 18px;
+    width: 34px; height: 34px;
+    background: var(--off-white);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    font-size: 1.2rem;
+    line-height: 1;
+    color: var(--text-muted);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background var(--transition), color var(--transition);
+}
+.modal-close:hover {
+    background: var(--primary);
+    color: var(--white);
+    border-color: var(--primary);
+}
+
+.modal-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.modal-logo {
+    width: 58px; height: 58px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--border);
+    margin: 0 auto 14px;
+}
+.modal-logo img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+}
+.modal-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem;
+    color: var(--text-main);
+    margin-bottom: 8px;
+}
+.modal-header p {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Nav ghost button */
+.btn-ghost-nav {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    transition: color var(--transition), background var(--transition);
+}
+.btn-ghost-nav:hover {
+    color: var(--primary);
+    background: var(--primary-glow);
+}
+
+/* Mobile link button (for contact in mobile menu) */
+.mob-link-btn {
+    display: block;
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    font-family: 'DM Sans', sans-serif;
+    cursor: pointer;
+}
+
+/* ============================================
+   RESPONSIVE — ENROLL
+   ============================================ */
+@media (max-width: 1024px) {
+    .enroll-layout { grid-template-columns: 1fr 300px; gap: 26px; }
+    .enroll-form-card { padding: 40px 36px; }
+}
+
+@media (max-width: 860px) {
+    .enroll-layout { grid-template-columns: 1fr; }
+    .enroll-sidebar { position: relative; top: auto; }
+    .modal-box { padding: 36px 28px; }
+}
+
+@media (max-width: 640px) {
+    .lv-form .form-row { grid-template-columns: 1fr; }
+    .checkbox-grid { grid-template-columns: repeat(2, 1fr); }
+    .enroll-form-card { padding: 28px 20px; }
+    .enroll-hero { padding: 120px 20px 60px; }
+    .modal-box { padding: 30px 20px; }
+}
+
+@media (max-width: 400px) {
+    .checkbox-grid { grid-template-columns: 1fr; }
+}

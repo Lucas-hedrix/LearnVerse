@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enroll Your Child — LearnVerse Hub</title>
-    <meta name="description" content="Enroll your child in Learn Verse Edu Hub's premium educational and coding programs. Fill in the form and our team will be in touch within 24 hours.">
+    <meta name="description" content="Enroll your child in LearnVerse Hub's premium educational and coding programs. Fill in the form and our team will be in touch within 24 hours.">
     <link rel="icon" type="image/jpeg" href="logoImg.jpeg">
     <link rel="apple-touch-icon" href="logoImg.jpeg">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -31,7 +31,7 @@
             </nav>
             <div class="nav-cta" style="display:flex;gap:10px;align-items:center;">
                 <a href="index.html" class="btn btn-ghost-nav">← Back to Site</a>
-                <a href="enroll.html" class="btn btn-outline">Enrol Now</a>
+                <a href="enroll.html" class="btn btn-outline">Enroll Now</a>
             </div>
             <button class="hamburger" id="hamburger" aria-label="Open menu">
                 <span></span><span></span><span></span>
@@ -65,7 +65,7 @@
         </div>
     </section>
 
-    <!-- Enrolment Form -->
+    <!-- Enrollment Form -->
     <section class="enroll-form-section">
         <div class="enroll-layout">
 
@@ -77,9 +77,9 @@
 
                     <form id="enrollForm" class="lv-form" novalidate>
                         <!-- Web3Forms key — replace with yours from web3forms.com -->
-                        <input type="hidden" name="access_key" value="3c5d578e-ef88-436f-a607-98d0de54f32d">
-                        <input type="hidden" name="subject" value="New Child Enrolment — LearnVerse Hub">
-                        <input type="hidden" name="from_name" value="LearnVerse Hub Enrolment">
+                        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY_HERE">
+                        <input type="hidden" name="subject" value="New Child Enrollment — LearnVerse Hub">
+                        <input type="hidden" name="from_name" value="LearnVerse Hub Enrollment">
                         <input type="checkbox" name="botcheck" style="display:none;">
 
                         <!-- SECTION 1: Parent Info -->
@@ -211,6 +211,14 @@
                                     </div>
                                 </label>
                                 <label class="checkbox-card">
+                                    <input type="checkbox" name="program" value="Robotics">
+                                    <div class="checkbox-card-inner">
+                                        <span class="cb-icon">⚙️</span>
+                                        <span class="cb-title">Robotics</span>
+                                        <span class="cb-age">Ages 8+</span>
+                                    </div>
+                                </label>
+                                <label class="checkbox-card">
                                     <input type="checkbox" name="program" value="Special Education Needs (SEN)">
                                     <div class="checkbox-card-inner">
                                         <span class="cb-icon">💛</span>
@@ -227,6 +235,17 @@
                                     </div>
                                 </label>
                             </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="edu-stage">Education Stage <span class="req">*</span></label>
+                            <select id="edu-stage" name="education_stage" required>
+                                <option value="" disabled selected>Select your child's education stage</option>
+                                <option>EYFS (Early Years Foundation Stage — Ages 3–5)</option>
+                                <option>Primary (Ages 5–11)</option>
+                                <option>Secondary (Ages 11–18)</option>
+                                <option>Adult Education (18+)</option>
+                            </select>
                         </div>
 
                         <div class="form-row">
@@ -295,13 +314,13 @@
                         <div class="form-group consent-group">
                             <label class="consent-label">
                                 <input type="checkbox" name="consent" id="consent" required>
-                                <span>I agree to be contacted by Learn Verse Edu Hub regarding my child's enrolment. I understand my data will be used solely for this purpose and not shared with third parties. <span class="req">*</span></span>
+                                <span>I agree to be contacted by LearnVerse Hub regarding my child's enrollment. I understand my data will be used solely for this purpose and not shared with third parties. <span class="req">*</span></span>
                             </label>
                         </div>
 
                         <button type="submit" class="btn btn-primary btn-full btn-enroll" id="enrollSubmitBtn">
                             <span class="btn-label">
-                                Submit Enrolment
+                                Submit Enrollment
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                             </span>
                             <span class="btn-spinner" style="display:none">
@@ -313,7 +332,7 @@
                         <div class="form-success" id="enrollSuccess" style="display:none">
                             <span>🎉</span>
                             <div>
-                                <strong>Enrolment Received!</strong>
+                                <strong>Enrollment Received!</strong>
                                 <p>Thank you! Our team will review your application and contact you within 24 hours to confirm your child's place.</p>
                             </div>
                         </div>
